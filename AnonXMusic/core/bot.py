@@ -20,10 +20,7 @@ class Anony(Client):
         )
 
     async def start(self):
-        self.id = self.me.id
-        self.name = self.me.first_name + " " + (self.me.last_name or "")
-        self.username = self.me.username
-        self.mention = self.me.mention
+        
 
         try:
             await self.send_message(
