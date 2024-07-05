@@ -23,7 +23,7 @@ def stats_buttons(_, status):
             sudo if status else not_sudo,
             [
                 InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"],
+                    text="✯ ᴄʟᴏsᴇ ✯"],
                     callback_data="close",
                 ),
             ],
@@ -41,7 +41,7 @@ def back_stats_buttons(_):
                     callback_data="stats_back",
                 ),
                 InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"],
+                    text="✯ ᴄʟᴏsᴇ ✯",
                     callback_data="close",
                 ),
             ],
