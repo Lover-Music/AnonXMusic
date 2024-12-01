@@ -1,4 +1,5 @@
 import re
+import sys
 from os import getenv
 
 from dotenv import load_dotenv
@@ -6,40 +7,21 @@ from pyrogram import filters
 
 load_dotenv()
 
-# Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID", "18960528"))
-API_HASH = getenv("API_HASH", "cc0fff577b677c9b2b4de5dd5bc5dfd1")
+API_ID = int(getenv("API_ID", "18499702"))
+API_HASH = getenv("API_HASH")
 
-# Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "5983601762:AAHfn9No0QQVjfX6qYB2hO6GK-luLpaDpEs")
-# Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Userbot:karan2020@cluster0.hiixxzc.mongodb.net/?retryWrites=true&w=majority")
+BOT_TOKEN = getenv("BOT_TOKEN", "6051187601:AAFVHv00gc0SJhGwxkqmR_4uM8ZA528t7p4")
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://EXONTESTMONGO:EXONTESTMONGO@cluster0.bviw7ic.mongodb.net/?retryWrites=true&w=majority")
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001868248272"))
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "music")
 
-# Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", "-1001583255537"))
-
-# Get this value from @FallenxBot on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", "7133633146"))
-
-## Fill these variables if you're deploying on heroku.
-# Your heroku app name
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-# Get it from http://dashboard.heroku.com/account
-HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",
-    "https://github.com/Lover-Music/AnonXMusic",
-)
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
-GIT_TOKEN = getenv(
-    "GIT_TOKEN", None
-)  # Fill this variable if your upstream repository is private
-
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/About_lover_ll")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/The_chatting1_0")
+OWNER_ID = list(
+    map(int, getenv("OWNER_ID", "1548904516").split()))
+SUPPORT_CHANNEL = getenv(
+    "SUPPORT_CHANNEL", "https://t.me/LOVER_MUSIC_SUPPORT")
+SUPPORT_GROUP = getenv(
+    "SUPPORT_GROUP", "https://t.me/LOVER_MUSIC_SUPPORT_Group")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -61,7 +43,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
 
 
 # Get your pyrogram v2 session from @StringFatherBot on Telegram
-STRING1 = getenv("STRING_SESSION", "BQBzXIlH1rjwpN9nYgfe_5v3_iuC_V9SrBZOn2eJDWmjE5zPr_PvtCV4wQwsRdXN6SwgiyqlikDlooXA_3qtFceGyIfDsm1wT9GOy2yf4-p98t7I76s0P9AWOlNdB4Jed6Yl4qBvstjMaRBcdAuGk1Z6XYCD0G53oJZe_oOXZV_xUSCLHkrTmDmAfqBObFh0qIryW4_grBjIID3iPbOYQoMSAlzGxbuWtokZUrDLH0ycR5sNVzsYsvtaRJsvwj9LpMkxuM1FYk_UbENu09sc9p3qgglmhNPGlWTxZqegeYC1a1z2iVWMJeF4v-Yx4uDVWJqNDQRyxELMxT0kdd_0BjukAAAAAansz7IA")
+STRING1 = getenv("STRING_SESSION", "BQEaSHYArQSTgbqa-Y44-OIAmt5R5vKSTXPg03QExQnkhB6b6yOvjhl6UVmHt91k99Lrk4mGiMLD9VQxeVh8zDclBPweW4l9B2NiS5zobCanhzzspMywuKLeIsMTLn1nQlI3rGJCLxhhBVn-RerjHIFxzxTjE3mHOCwcEuHg7aS8gckaHflps_cfF1jUR5wxmzY7jLs34mRz_VokOp9N0HTJw4qLAPYQXcR_Zncy-GUNxZQ5mxQg7r8kdR19KMuqvjkY478GDqLL4DW6Be-xyhAdoU_6C79bFgph600ZJ2M6ma23jLrI-dC64jjDvJ4sw0lbFHkltZZO8hwxahP5y0QPzKZWCgAAAAHLMGAEAA ")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
