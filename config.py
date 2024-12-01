@@ -1,5 +1,4 @@
 import re
-import sys
 from os import getenv
 
 from dotenv import load_dotenv
@@ -7,21 +6,41 @@ from pyrogram import filters
 
 load_dotenv()
 
+# Get this value from my.telegram.org/apps
 API_ID = int(getenv("API_ID", "18499702"))
-API_HASH = getenv("API_HASH")
+API_HASH = getenv("API_HASH", "d4dff36c2c1ebf6f8f6bc044b5bce9c9")
 
+# Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN", "6051187601:AAFVHv00gc0SJhGwxkqmR_4uM8ZA528t7p4")
 
+# Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://EXONTESTMONGO:EXONTESTMONGO@cluster0.bviw7ic.mongodb.net/?retryWrites=true&w=majority")
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001868248272"))
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "music")
 
-OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "1548904516").split()))
-SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/LOVER_MUSIC_SUPPORT")
-SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/LOVER_MUSIC_SUPPORT_Group")
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
+
+# Chat id of a group for logging bot's activities
+LOGGER_ID = int(getenv("LOGGER_ID", "-1001868248272")
+
+# Get this value from @FallenxBot on Telegram by /id
+OWNER_ID = int(getenv("OWNER_ID", "5050578106"))
+
+## Fill these variables if you're deploying on heroku.
+# Your heroku app name
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+# Get it from http://dashboard.heroku.com/account
+HEROKU_API_KEY = getenv("HEROKU_API_KEY")
+
+UPSTREAM_REPO = getenv(
+    "UPSTREAM_REPO",
+    "https://github.com/AnonymousX1025/AnonXMusic",
+)
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+GIT_TOKEN = getenv(
+    "GIT_TOKEN", None
+)  # Fill this variable if your upstream repository is private
+
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/FallenAssociation")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/DevilsHeavenMF")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
